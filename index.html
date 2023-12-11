@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Sistema de Diagnóstico de Doenças Cardíacas (SDDC)</title>
+    <link rel="icon" href="img/home_logo.jpeg" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body onload="getList()">
+     <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <h2>Sistema de Diagnóstico de Doenças Cardíacas (SDDC)</h2>
+            <br>
+            <p>Através do SDDC, os médicos contam com uma ferramenta auxiliar para o dignóstico de doenças cardíacas.</p>
+        </div>
+    </header>
+
+    <br>
+
+     <!-- Opções para adicionar um novo item -->
+     <div class="container">
+        <div class="row g-2">
+            <div class="col-12 BodyText">
+                <p>Preencha os campos a seguir com os dados fornecidos pelo paciente e clique em "Diagnosticar":</p>
+            </div>
+        </div>
+        <br>
+        <form id="form1">
+            <div class="row g-2">
+                <div class="form-floating mb-4 col-md-3">
+                    <input type="text" class="form-control" id="newInput" placeholder="nome">
+                    <label for="floatingInput">Nome do paciente</label>
+                </div>
+                <div class="form-floating mb-3 col-md-3">
+                    <input type="text" class="form-control" id="newIdade" placeholder="Idade" maxlength="3">
+                    <label for="floatingInput">Idade</label>
+                </div>
+                <div class="form-floating mb-3 col-md-3">
+                    <select class="form-select form-select-sm" aria-label="Default select example" id="newSexo" placeholder="Sexo">
+                        <option type="text" selected value=0>0 - Feminino</option>
+                        <option type="text" value=1>1 - Masculino</option>
+                    </select>
+                    <label for="floatingSelect">Sexo</label>
+                </div>
+                <div class="form-floating mb-3 col-md-3">
+                    <select class="form-select form-select-sm" aria-label="Default select example" id="newDorPeito" placeholder="DorPeito">
+                        <option type="text" selected value="0">Nenhuma dor</option>
+                        <option type="text" value="1">Tipo 1</option>
+                        <option type="text" value="2">Tipo 2</option>
+                        <option type="text" value="3">Tipo 3</option>
+                    </select>
+                    <label for="floatingSelect">Tipo de dor no peito</label>
+                </div>
+            </div>
+            <br>
+            <div class="row g-2">
+                <div class="form-floating mb-4 col-md-3">
+                    <input type="text" class="form-control" id="newPressao" placeholder="Pressao" maxlength="3">
+                    <label for="floatingInput">Pressão sanguínea sob repouso</label>
+                </div>
+                <div class="form-floating mb-3 col-md-3">
+                    <input type="text" class="form-control" id="newColesterol" placeholder="Colesterol" maxlength="3">
+                    <label for="floatingInput">Colesterol sérico (mg/dl)</label>
+                </div>
+                <div class="form-floating mb-3 col-md-3">
+                    <select class="form-select form-select-sm" aria-label="Default select example" id="newGlicemia" placeholder="Glicemia">
+                        <option type="text" selected value="0">0 - Glicemia superior a 120 mg/dl</option>
+                        <option type="text" value="1">1 - Glicemia inferior a 120 mg/dl</option>
+                    </select>
+                    <label for="floatingSelect">Glicemia durante o jejum (mg/dl)</label>
+                </div>
+                <div class="form-floating mb-3 col-md-3">
+                    <select class="form-select form-select-sm" aria-label="Default select example" id="newEletro" placeholder="Eletro">
+                        <option type="text" selected value="0">Valor = 0</option>
+                        <option type="text" value="1">Valor = 1</option>
+                        <option type="text" value="2">Valor = 2</option>
+                    </select>
+                    <label for="floatingSelect">Resultado do eletrocardiograma</label>
+                </div>
+            </div>
+            <br>
+            <div class="row g-2">
+                <div class="form-floating mb-4 col-md-3">
+                    <input type="text" class="form-control" id="newFrequencia" placeholder="Frequencia" maxlength="3">
+                    <label for="floatingInput">Frequência cardíaca máxima</label>
+                </div>
+                <div class="form-floating mb-3 col-md-3">
+                    <!-- <input type="text" class="form-control" id="newAngina" placeholder="Angina">
+                    <label for="floatingInput">Angina induzida por exercício</label> -->
+                    <select class="form-select form-select-sm" aria-label="Default select example" id="newAngina" placeholder="Angina">
+                        <option type="text" selected value="0">0 - Não</option>
+                        <option type="text" value="1">1 - Sim</option>
+                    </select>
+                    <label for="floatingSelect">Angina induzida por exercício</label>
+                </div>
+                <div class="form-floating mb-3 col-md-3">
+                    <input type="text" class="form-control" autocomplete=off id="newDepressao" placeholder="Depressao" maxlength="6">
+                    <label for="floatingInput">Depressão de ST</label>
+                </div>
+                <div class="form-floating mb-4 col-md-3">
+                    <select class="form-select form-select-sm" aria-label="Default select example" id="newInclinacao" placeholder="Inclinacao">
+                        <option type="text" selected value="0">Valor = 0</option>
+                        <option type="text" value="1">Valor = 1</option>
+                        <option type="text" value="2">Valor = 2</option>
+                    </select>
+                    <label for="floatingSelect">Inclinação do segmento ST</label>
+                </div>
+            </div>
+            <br>
+            <div class="row g-2">
+                <div class="form-floating mb-3 col-md-4">
+                    <select class="form-select form-select-sm" aria-label="Default select example" id="newVasos" placeholder="Vasos">
+                        <option type="text" selected value=0>0 - nenhum vaso principal colorido</option>
+                        <option type="text" value="1">1 - 1 vaso principal colorido</option>
+                        <option type="text" value="2">2 - 2 vasos principais coloridos</option>
+                        <option type="text" value="3">3 - 3 vasos principais coloridos</option>
+                        <option type="text" value="4">4 - 4 vasos principais coloridos</option>
+                    </select>
+                    <label for="floatingSelect">Fluoroscopia</label>
+                </div>
+                <div class="form-floating mb-3 col-md-4">
+                    <select class="form-select form-select-sm" aria-label="Default select example" id="newTalassemia" placeholder="Talassemia">
+                        <option type="text" selected value="1">1 - normal</option>
+                        <option type="text" value="2">2 - problema corrigido</option>
+                        <option type="text" value="3">3 - problema reversível</option>
+                    </select>
+                    <label for="floatingSelect">Talassemia</label>
+                </div>
+            </div>
+            <br>
+            <div class="row g-4">
+                <div class="d-grid gap-2">
+                    <button onclick="newItem()" class="btn btn-secondary" type="button"><b>Diagnosticar</b></button>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+        </form>
+    </div>
+    <br>
+    <hr>
+    <!-- Tabela com items existentes -->
+    <section class="items">
+        <table id="myTable" class="table table-secondary .table-sm caption-top table-hover table-striped table-bordered border border-primary-subtle">
+            <caption>
+                    <div class="col-12 BodyText"><h4>Pacientes cadastrados</h4></div>
+                    <br>
+                    <div class="col-12 BodyText">Resultado negativo para doença cardíaca = 0</div>
+                    <div class="col-12 BodyText">Resultado positivo para doença cardíaca = 1</div>
+            </caption>
+                <div class="row g-0">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>Sexo</th>
+                        <th>Dor no peito</th>
+                        <th>Pressão sanguínea</th>
+                        <th>Colesterol</th>
+                        <th>Glicemia</th>
+                        <th>Eletrocardiograma</th>
+                        <th>Frequência cardíaca</th>
+                        <th>Angina</th>
+                        <th>Depressão de ST</th>
+                        <th>Inclinação do segmento ST</th>
+                        <th>Fluoroscopia</th>
+                        <th>Talassemia</th>
+                        <th>Doença cardíaca</th>
+
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15" height="15"></th>
+                        <!-- <th><img src="img/edit.png" width="15" height="15"></th> -->
+                    </tr>
+                </div>
+        </table>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
+

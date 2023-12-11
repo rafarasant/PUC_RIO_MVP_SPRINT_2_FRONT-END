@@ -22,6 +22,6 @@ A aplicação foi desenvolvida para funcionar em uma única página *web*.
 ---
 ## Funcionalidades
 
-Nesta aplicação, o usuário do sistema pode cadastrar e excluir pacientes. Também é possível visualizar o diagnóstico de cada um deles, desde que servida a aplicação com o uso do Flask, conforme descrito no arquivo README.md contido no repositório PUC_RIO_MVP_SPRINT_2_BACK-END, acessível através do seguinte link: 
+Nesta aplicação, o usuário do sistema pode cadastrar e excluir pacientes. Também é possível visualizar o diagnóstico de cada um deles, desde que servida a aplicação através do Flask, conforme descrito no arquivo README.md contido no repositório PUC_RIO_MVP_SPRINT_2_BACK-END, acessível através do seguinte link: 
 
 https://github.com/rafarasant/PUC_RIO_MVP_SPRINT_2_BACK-END.git

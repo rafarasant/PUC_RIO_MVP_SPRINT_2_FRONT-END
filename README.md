@@ -4,8 +4,8 @@ O **Sistema de Diagnóstico de Doenças Cardíacas (SDDC)** busca prover aos pro
 uma ferramenta auxiliar para o diagnóstico de doenças cardíacas.
 
 No presente projeto, o SDDC é empregado no contexto de um consultório especializado em cardiologia, cujos serviços são 
-prestados por um único profissional cardiologista. Cabe ao médico o uso dessa ferramenta 
-para cadastrar os pacientes e marcar suas consultas.
+prestados por um único profissional cardiologista. Cabe ao médico o uso dessa ferramenta para cadastrar os dados de seus
+pacientes e verificar se eles portam, ou não, uma doença cardíaca.
 
 Este projeto foi desenvolvido para o MVP da Sprint 2 da **Pós Gradução de Engenharia de Softwarer da PUC-Rio**. 
 

@@ -7,7 +7,7 @@ No presente projeto, o SDDC é empregado no contexto de um consultório especial
 prestados por um único profissional cardiologista. Cabe ao médico o uso dessa ferramenta para cadastrar os dados de seus
 pacientes e verificar se eles portam, ou não, uma doença cardíaca.
 
-Este projeto foi desenvolvido para o MVP da Sprint 2 da **Pós Gradução de Engenharia de Softwarer da PUC-Rio**. 
+Este projeto foi desenvolvido para o MVP da Sprint 2 da **Pós-Gradução em Engenharia de Softwarer da PUC-Rio**. 
 
 ---
 ## Como executar
